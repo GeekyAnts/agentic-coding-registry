@@ -22,8 +22,12 @@ npx create-ai-native-project
 ```
 
 It reads `.ai-native-project.json`, **reuses the fixed project type** (won't
-re-ask it), **merges** your new selections into the existing state, and **never
-overwrites existing files** (only adds what's missing).
+re-ask it), hides already-installed options, and **merges** new selections into
+the existing state. Your files are never overwritten: setup files are only added
+if missing, while generator-composed files are extended in place — new sections
+are **appended** to `CLAUDE.md`, new services to `docker-compose.yml`, new jobs
+to the CI pipeline, and new deps/scripts **merged** into `package.json`
+(existing entries always win).
 
 - **Single project:** adds stacks, databases, storage, auth, CI, docs, skills, agents.
 - **Monorepo:** adds more **apps** — each scaffolded under `apps/<group>/<name>/`
