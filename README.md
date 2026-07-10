@@ -9,6 +9,7 @@ templates into a target project.
 ```
 project-types/<id>/  project shape (monorepo, single, …)  → files copied to project root
 stacks/<id>/         tech stack (react, node-nest, …)      → files copied to project root
+docs/<id>/           docs tooling (docusaurus, …)          → files copied to project docs/
 skills/<id>/         one directory per skill               → copied to .claude/skills/<id>/
 agents/<id>/         one directory per agent               → copied to .claude/agents/
 claude/<id>/         base CLAUDE.md fallback               → e.g. claude/default/CLAUDE.md
@@ -31,10 +32,23 @@ single file:
 - Each selected **stack** may provide `CLAUDE.section.md` — **appended** to the
   base, in selection order.
 
-These "compose files" (`CLAUDE.md`, `CLAUDE.section.md`) and `template.json` are
-**not** copied verbatim. Every **other** file in a template directory IS copied
-into the target project (preserving sub-paths) — this is how project-types and
-stacks also drop setup files (e.g. `pnpm-workspace.yaml`, `docs/…`).
+### package.json composition
+
+For **project-types** and **stacks**, a `package.json` is *merged* (not copied):
+the project-type provides the base, each stack's `package.json` is merged in with
+**first-wins** semantics (existing keys — including individual deps/scripts — are
+never overwritten). This produces one runnable root `package.json`.
+
+> `docs/` templates are self-contained sub-projects: their `package.json` **is**
+> copied verbatim (into `docs/`), not merged into the root.
+
+### What's copied vs. composed
+
+Per project-type / stack, these are **composed** (not copied): `CLAUDE.md`,
+`CLAUDE.section.md`, `package.json`, `template.json`. Every **other** file is
+copied verbatim into the target (preserving sub-paths) — how templates drop
+setup files (e.g. `pnpm-workspace.yaml`, `vite.config.ts`, `docs/…`). For other
+kinds (docs/skills/agents) only `template.json` is withheld.
 
 ## Contributing a template
 
