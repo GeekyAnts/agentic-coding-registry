@@ -9,6 +9,7 @@ templates into a target project.
 ```
 project-types/<id>/  project shape (monorepo, single, …)  → files copied to project root
 stacks/<id>/         tech stack (react, flutter, laravel, python-*, …) → project root
+                     (may bundle `.claude/agents/<id>.md` — auto-installed with the stack)
 databases/<id>/      database (postgres, mysql, mongodb)   → sections + compose service
 storage/<id>/        storage (minio, aws-s3)               → sections + compose service
 auth/<id>/           auth (jwt, clerk)                     → sections + setup files
