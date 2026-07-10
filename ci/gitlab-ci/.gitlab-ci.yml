@@ -1,0 +1,20 @@
+# Starter Node/pnpm pipeline — tailor the steps to your stack.
+stages:
+  - build
+  - test
+
+default:
+  image: node:22
+  before_script:
+    - corepack enable
+    - pnpm install
+
+build:
+  stage: build
+  script:
+    - pnpm run build
+
+test:
+  stage: test
+  script:
+    - pnpm test

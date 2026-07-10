@@ -11,7 +11,9 @@ project-types/<id>/  project shape (monorepo, single, …)  → files copied to 
 stacks/<id>/         tech stack (react, flutter, laravel, python-*, …) → project root
 databases/<id>/      database (postgres, mysql, mongodb)   → sections + compose service
 storage/<id>/        storage (minio, aws-s3)               → sections + compose service
+auth/<id>/           auth (jwt, clerk)                     → sections + setup files
 docker/<id>/         docker-compose base (compose)         → composed docker-compose.yml
+ci/<id>/             CI (github-actions, gitlab-ci)        → pipeline file copied to project
 docs/<id>/           docs tooling (docusaurus, …)          → files copied to project docs/
 skills/<id>/         one directory per skill               → copied to .claude/skills/<id>/
 agents/<id>/         one directory per agent               → copied to .claude/agents/
