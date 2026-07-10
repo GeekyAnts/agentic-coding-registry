@@ -5,6 +5,11 @@
 > clearly categorized, referenceable sections.
 >
 > Project shape: **Single Project** — one application/package in this repo.
+>
+> **Project state** is tracked in `.ai-native-project.json` (stacks, databases,
+> storage, auth, ci, docker, docs, skills, agents). Consult it before scaffolding
+> or adding tooling so you don't duplicate what's already set up, and don't change
+> the fixed project type.
 
 ---
 
