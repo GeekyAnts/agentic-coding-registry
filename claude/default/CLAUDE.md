@@ -56,6 +56,21 @@ _How to install, run, test, and build._
 - Keep changes focused and atomic; write clear, descriptive commit messages.
 - Merge to `main` via a PR/MR — don't push feature work straight to `main`.
 
+### Engineering standards (non-negotiable)
+- **Never hardcode or log secrets** (credentials, tokens, API keys); use env vars.
+- **Validate before done:** run the formatter, linter, type-checker, tests, and
+  build; never claim code works or tests pass unless you actually ran them.
+- **Test behavior changes:** add/update tests (expected behavior, invalid input,
+  boundaries, permission failures); never weaken tests just to pass.
+- **Treat external input as untrusted:** validate at the boundary and enforce
+  authorization server-side on every request.
+- **Smallest complete change:** reuse existing code; don't reformat or refactor
+  unrelated code; preserve backward compatibility unless the task allows breaking it.
+- **Priority when conflicts arise:** security > correctness > data integrity >
+  backward compatibility > reliability > maintainability > testability >
+  performance > delivery speed > brevity.
+- For non-trivial work, follow the **`engineering-standards`** skill (full playbook).
+
 _Add project-specific coding standards, naming, and review norms here._
 
 ## 6. Decisions

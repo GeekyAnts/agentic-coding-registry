@@ -1,0 +1,4 @@
+{
+  "name": "Security Reviewer",
+  "description": "Reviews diffs for security vulnerabilities before merge"
+}
