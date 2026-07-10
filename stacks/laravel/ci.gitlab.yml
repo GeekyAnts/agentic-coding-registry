@@ -1,0 +1,5 @@
+laravel:
+  stage: build
+  image: php:8.3-cli
+  script:
+    - php -l public/index.php

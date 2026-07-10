@@ -1,20 +1,10 @@
-# Starter Node/pnpm pipeline — tailor the steps to your stack.
+# Base skeleton — per-stack jobs are appended by create-ai-native-project.
 stages:
   - build
   - test
 
-default:
-  image: node:22
-  before_script:
-    - corepack enable
-    - pnpm install
-
-build:
+lint:
   stage: build
+  image: alpine
   script:
-    - pnpm run build
-
-test:
-  stage: test
-  script:
-    - pnpm test
+    - echo "Add repo-wide lint/format checks here"

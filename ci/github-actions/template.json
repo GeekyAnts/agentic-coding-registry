@@ -1,1 +1,5 @@
-{ "name": "GitHub Actions", "description": "CI workflow in .github/workflows/ci.yml" }
+{
+  "name": "GitHub Actions",
+  "description": "Per-stack CI workflow in .github/workflows/ci.yml",
+  "compose": { "base": ".github/workflows/ci.yml", "fragment": "ci.github.yml" }
+}

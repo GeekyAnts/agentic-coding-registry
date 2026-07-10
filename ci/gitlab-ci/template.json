@@ -1,1 +1,5 @@
-{ "name": "GitLab CI", "description": "CI pipeline in .gitlab-ci.yml" }
+{
+  "name": "GitLab CI",
+  "description": "Per-stack CI pipeline in .gitlab-ci.yml",
+  "compose": { "base": ".gitlab-ci.yml", "fragment": "ci.gitlab.yml" }
+}

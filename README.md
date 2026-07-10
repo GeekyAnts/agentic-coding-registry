@@ -25,7 +25,7 @@ databases/<id>/      database (postgres, mysql, mongodb)   → sections + compos
 storage/<id>/        storage (minio, aws-s3)               → sections + compose service
 auth/<id>/           auth (jwt, clerk)                     → sections + setup files
 docker/<id>/         docker-compose base (compose)         → composed docker-compose.yml
-ci/<id>/             CI (github-actions, gitlab-ci)        → pipeline file copied to project
+ci/<id>/             CI (github-actions, gitlab-ci)        → base + per-stack jobs composed
 docs/<id>/           docs tooling (docusaurus, …)          → files copied to project docs/
 skills/<id>/         one directory per skill               → copied to .claude/skills/<id>/
 agents/<id>/         one directory per agent               → copied to .claude/agents/
@@ -56,6 +56,14 @@ mirroring CLAUDE.md): the `docker/compose` base supplies the `services:` header,
 and each selected stack / database / storage may contribute a
 `compose.service.yml` fragment (one or more service entries, indented to sit
 under `services:`). Fragments are appended in selection order.
+
+### CI composition (per-stack)
+
+A CI provider's `template.json` declares `compose: { base, fragment }`. The CLI
+takes the provider's `base` skeleton (which has the `jobs:` / `stages:` header)
+and appends each selected stack's `fragment` file — `ci.github.yml` (a job
+indented under `jobs:`) or `ci.gitlab.yml` (a top-level job). So the pipeline
+contains a job per chosen stack.
 
 ### package.json composition
 
