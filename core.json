@@ -1,4 +1,4 @@
 {
-  "skills": ["engineering-standards"],
+  "skills": ["engineering-standards", "knowledge-base"],
   "agents": ["code-reviewer", "security-reviewer"]
 }
