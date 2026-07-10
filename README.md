@@ -4,6 +4,17 @@ Template registry consumed by the [`create-ai-native-project`](https://git.geeky
 The CLI shallow-clones this repo into a local cache and copies the selected
 templates into a target project.
 
+## Core set (`core.json`)
+
+`core.json` at the registry root lists skills/agents installed on **every**
+project regardless of what the user selects (they're hidden from the pickers):
+
+```json
+{ "skills": ["engineering-standards"], "agents": ["code-reviewer", "security-reviewer"] }
+```
+
+Edit it to change what's always installed — no CLI release needed.
+
 ## Layout
 
 ```

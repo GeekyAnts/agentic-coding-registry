@@ -1,0 +1,4 @@
+{
+  "skills": ["engineering-standards"],
+  "agents": ["code-reviewer", "security-reviewer"]
+}
