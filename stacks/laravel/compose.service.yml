@@ -1,0 +1,8 @@
+  laravel:
+    image: php:8.3-cli
+    working_dir: /app
+    command: php -S 0.0.0.0:8080 -t public
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app

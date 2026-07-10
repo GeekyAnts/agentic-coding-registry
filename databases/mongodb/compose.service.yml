@@ -1,0 +1,9 @@
+  mongodb:
+    image: mongo:7
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: app
+      MONGO_INITDB_ROOT_PASSWORD: app
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./.data/mongo:/data/db

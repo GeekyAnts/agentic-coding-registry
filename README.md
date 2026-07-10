@@ -8,7 +8,10 @@ templates into a target project.
 
 ```
 project-types/<id>/  project shape (monorepo, single, …)  → files copied to project root
-stacks/<id>/         tech stack (react, node-nest, …)      → files copied to project root
+stacks/<id>/         tech stack (react, flutter, laravel, python-*, …) → project root
+databases/<id>/      database (postgres, mysql, mongodb)   → sections + compose service
+storage/<id>/        storage (minio, aws-s3)               → sections + compose service
+docker/<id>/         docker-compose base (compose)         → composed docker-compose.yml
 docs/<id>/           docs tooling (docusaurus, …)          → files copied to project docs/
 skills/<id>/         one directory per skill               → copied to .claude/skills/<id>/
 agents/<id>/         one directory per agent               → copied to .claude/agents/
@@ -31,6 +34,14 @@ single file:
   base (falls back to `claude/default/CLAUDE.md`).
 - Each selected **stack** may provide `CLAUDE.section.md` — **appended** to the
   base, in selection order.
+
+### docker-compose composition
+
+When the user opts into Docker, `docker-compose.yml` is composed (text-based,
+mirroring CLAUDE.md): the `docker/compose` base supplies the `services:` header,
+and each selected stack / database / storage may contribute a
+`compose.service.yml` fragment (one or more service entries, indented to sit
+under `services:`). Fragments are appended in selection order.
 
 ### package.json composition
 
