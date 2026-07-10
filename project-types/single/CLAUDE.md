@@ -47,7 +47,16 @@ _Key components, how they fit together, and important boundaries._
 _How to install, run, test, and build._
 
 ## 5. Conventions
-_Coding standards, naming, branching, and review norms._
+
+### Development workflow (defaults — follow unless a project convention overrides)
+- **Branch first.** For any feature request or change, create a branch *before*
+  you start developing or editing files. Never commit directly to `main`.
+- **Version management.** Bump the version number (e.g. `package.json` `version`,
+  following semver) after each commit or push.
+- Keep changes focused and atomic; write clear, descriptive commit messages.
+- Merge to `main` via a PR/MR — don't push feature work straight to `main`.
+
+_Add project-specific coding standards, naming, and review norms here._
 
 ## 6. Decisions
 | Date        | Decision | Rationale |
