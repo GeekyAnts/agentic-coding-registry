@@ -1,4 +1,4 @@
 {
-  "skills": ["engineering-standards", "knowledge-base"],
+  "skills": ["engineering-standards", "knowledge-base", "using-create-ai-native-project"],
   "agents": ["code-reviewer", "security-reviewer"]
 }
