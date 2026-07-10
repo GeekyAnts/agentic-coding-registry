@@ -7,9 +7,11 @@ templates into a target project.
 ## Layout
 
 ```
-skills/<id>/     one directory per skill  → copied to  .claude/skills/<id>/
-agents/<id>/     one directory per agent  → copied to  .claude/agents/
-claude/<id>/     CLAUDE.md template(s)    → copied to  the project root
+project-types/<id>/  project shape (monorepo, single, …)  → files copied to project root
+stacks/<id>/         tech stack (react, node-nest, …)      → files copied to project root
+skills/<id>/         one directory per skill               → copied to .claude/skills/<id>/
+agents/<id>/         one directory per agent               → copied to .claude/agents/
+claude/<id>/         base CLAUDE.md fallback               → e.g. claude/default/CLAUDE.md
 ```
 
 Each template directory may include a `template.json` describing it (used to
@@ -19,8 +21,20 @@ render the interactive picker); the manifest itself is **not** copied:
 { "name": "Human-readable name", "description": "One-line summary" }
 ```
 
-All other files in a template directory are copied verbatim, preserving their
-relative sub-paths.
+### CLAUDE.md composition
+
+The CLI builds the project's CLAUDE.md from templates rather than copying a
+single file:
+
+- The selected **project-type** may provide `CLAUDE.md` — the **base** knowledge
+  base (falls back to `claude/default/CLAUDE.md`).
+- Each selected **stack** may provide `CLAUDE.section.md` — **appended** to the
+  base, in selection order.
+
+These "compose files" (`CLAUDE.md`, `CLAUDE.section.md`) and `template.json` are
+**not** copied verbatim. Every **other** file in a template directory IS copied
+into the target project (preserving sub-paths) — this is how project-types and
+stacks also drop setup files (e.g. `pnpm-workspace.yaml`, `docs/…`).
 
 ## Contributing a template
 
