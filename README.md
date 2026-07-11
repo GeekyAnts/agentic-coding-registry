@@ -1,8 +1,10 @@
-# claude-setup — Template Registry
+# agentic-coding-registry — Template Registry
 
-Template registry consumed by the [`create-ai-native-project`](https://git.geekyants.com/geekyants/create-ai-native-project) CLI.
-The CLI shallow-clones this repo into a local cache and copies the selected
-templates into a target project.
+Template registry consumed by the [`create-ai-native-project`](https://github.com/GeekyAnts/create-ai-native-project) CLI
+— **[documentation](https://geekyants.github.io/create-ai-native-project/)**.
+The CLI shallow-clones this repo into a local cache and copies/retargets the
+selected templates into a target project — for **Claude Code, OpenAI Codex, and
+OpenCode**.
 
 ## Core set (`core.json`)
 
@@ -10,7 +12,7 @@ templates into a target project.
 project regardless of what the user selects (they're hidden from the pickers):
 
 ```json
-{ "skills": ["engineering-standards"], "agents": ["code-reviewer", "security-reviewer"] }
+{ "skills": ["engineering-standards", "knowledge-base", "using-create-ai-native-project"], "agents": ["code-reviewer", "security-reviewer"] }
 ```
 
 Edit it to change what's always installed — no CLI release needed.
@@ -31,6 +33,12 @@ skills/<id>/         one directory per skill               → copied to .claude
 agents/<id>/         one directory per agent               → copied to .claude/agents/
 claude/<id>/         base CLAUDE.md fallback               → e.g. claude/default/CLAUDE.md
 ```
+
+> **Multi-tool:** skills/agents are authored here in Claude Code's shape; the CLI
+> **retargets** them per selected tool — agents to `.claude/agents`,
+> `.opencode/agents` (`.md`), or `.codex/agents` (`.toml`); skills to
+> `.claude/skills`, `.opencode/skills`, or `.agents/skills`. See the
+> [docs](https://geekyants.github.io/create-ai-native-project/guide/coding-tools).
 
 Each template directory may include a `template.json` describing it (used to
 render the interactive picker); the manifest itself is **not** copied:
@@ -88,4 +96,4 @@ kinds (docs/skills/agents) only `template.json` is withheld.
 1. Add a directory under `skills/`, `agents/`, or `claude/`.
 2. Add a `template.json` with `name` + `description`.
 3. Add the files to be copied into a target project.
-4. Open an MR against `main`.
+4. Open a PR against `main`.
