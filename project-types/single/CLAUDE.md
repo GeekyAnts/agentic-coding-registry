@@ -1,4 +1,4 @@
-# CLAUDE.md — <Project> Knowledge Base
+# <Project> Knowledge Base
 
 > Structured following **OKF (Open Knowledge Foundation)** principles: explicit
 > metadata & provenance, a named maintainer, and knowledge organized into
@@ -20,7 +20,7 @@
 
 | Task                              | Priority | Status  |
 | --------------------------------- | -------- | ------- |
-| Keep CLAUDE.md updated as we go   | High ⭐  | Ongoing |
+| Keep this file updated as we go   | High ⭐  | Ongoing |
 
 ---
 
