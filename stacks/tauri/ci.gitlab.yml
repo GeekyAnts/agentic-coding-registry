@@ -1,0 +1,7 @@
+tauri:
+  stage: build
+  image: rust:1-bookworm
+  script:
+    - apt-get update && apt-get install -y libwebkit2gtk-4.1-dev librsvg2-dev patchelf
+    - mkdir -p dist && echo "<!doctype html><title>app</title>" > dist/index.html
+    - cargo check --manifest-path src-tauri/Cargo.toml
