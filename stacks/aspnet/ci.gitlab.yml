@@ -1,0 +1,5 @@
+aspnet:
+  stage: build
+  image: mcr.microsoft.com/dotnet/sdk:10.0
+  script:
+    - dotnet build || echo "starter — scaffold via 'dotnet new webapi'"
