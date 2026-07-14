@@ -73,6 +73,18 @@ _How to install, run, test, and build._
 
 _Add project-specific coding standards, naming, and review norms here._
 
+### LLM providers
+This project is AI-native — when wiring LLM calls, default to the latest Claude
+models and keep provider setup consistent:
+- **Models (Claude):** `claude-sonnet-5` (balanced default), `claude-opus-4-8`
+  (hardest tasks), `claude-haiku-4-5-20251001` (cheap/fast).
+- **Anthropic (recommended):** `@anthropic-ai/sdk` (Node) / `anthropic` (Python);
+  key in `ANTHROPIC_API_KEY`. **OpenAI:** `openai`; key in `OPENAI_API_KEY`.
+- Keep API keys **server-side only** — never in client bundles or `NEXT_PUBLIC_*`;
+  put them in `.env` and document them in `.env.example`.
+- For chat UIs, streaming, or agents, prefer a toolkit (Vercel AI SDK, LangGraph,
+  PydanticAI) over raw SDK calls.
+
 ## 6. Decisions
 | Date        | Decision | Rationale |
 | ----------- | -------- | --------- |
