@@ -92,6 +92,17 @@ models and keep provider setup consistent:
 - For chat UIs, streaming, or agents, prefer a toolkit (Vercel AI SDK, LangGraph,
   PydanticAI) over raw SDK calls.
 
+### Deploying
+- Match the target to each app: **Vercel** (Next.js / frontends, PR previews),
+  **Cloudflare Workers** (Hono / edge — `wrangler.jsonc`), **Netlify** (Astro /
+  static), **Railway** / **Fly.io** (long-running Node/Python servers, Docker),
+  **Render** (simple services). In a monorepo, deploy each app independently.
+- Keep secrets in the platform's env settings — never in the repo; mirror the
+  names in `.env.example`.
+- Each platform has one config file to add when needed (`vercel.json`,
+  `wrangler.jsonc`, `netlify.toml`, `railway.json`, `render.yaml`, `fly.toml`),
+  or let its CLI (`vercel`, `wrangler`, `flyctl`, …) generate it.
+
 ## 7. Decisions
 | Date        | Decision | Rationale |
 | ----------- | -------- | --------- |
