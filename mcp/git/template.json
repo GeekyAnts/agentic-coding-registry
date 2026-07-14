@@ -1,0 +1,1 @@
+{ "name": "Git", "description": "Local Git operations — status, diff, log, blame, branch, commit (stdio, needs uv/Python)" }

@@ -1,0 +1,5 @@
+{
+  "transport": "http",
+  "url": "https://mcp.context7.com/mcp",
+  "note": "Works without a key (lower rate limit). For higher limits, get a key at context7.com and pass it via the CONTEXT7_API_KEY header."
+}

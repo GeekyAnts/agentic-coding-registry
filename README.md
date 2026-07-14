@@ -29,6 +29,7 @@ auth/<id>/           auth (jwt, clerk)                     → sections + setup 
 docker/<id>/         docker-compose base (compose)         → composed docker-compose.yml
 ci/<id>/             CI (github-actions, gitlab-ci)        → base + per-stack jobs composed
 docs/<id>/           docs tooling (docusaurus, …)          → files copied to project docs/
+mcp/<id>/            MCP server (chrome-devtools, …)       → per-tool MCP config (see below)
 skills/<id>/         one directory per skill               → copied to .claude/skills/<id>/
 agents/<id>/         one directory per agent               → copied to .claude/agents/
 claude/<id>/         base CLAUDE.md fallback               → e.g. claude/default/CLAUDE.md
@@ -72,6 +73,22 @@ takes the provider's `base` skeleton (which has the `jobs:` / `stages:` header)
 and appends each selected stack's `fragment` file — `ci.github.yml` (a job
 indented under `jobs:`) or `ci.gitlab.yml` (a top-level job). So the pipeline
 contains a job per chosen stack.
+
+### MCP server composition (per-tool)
+
+An `mcp/<id>/` entry describes an MCP server the agent can connect to. It ships:
+
+- `template.json` — picker metadata (`name` / `description`).
+- `mcp.json` — a **tool-neutral** spec: `transport` (`stdio` | `http`), then
+  `command` + `args` (+ optional `env`) for stdio, or `url` (+ optional `headers`)
+  for http. An optional `note` documents any key/runtime requirement.
+- `CLAUDE.section.md` — a short section appended to the instructions file.
+
+The CLI reads the spec and **generates each selected tool's own MCP config**,
+merging into whatever the project already has (existing servers are never
+overwritten): `.mcp.json` (Claude Code), the `mcp` block of `opencode.json`
+(OpenCode), and `.codex/config.toml` (Codex). Cline has no project-committed MCP
+file, so it's documented rather than written.
 
 ### package.json composition
 
