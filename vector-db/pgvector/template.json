@@ -1,0 +1,1 @@
+{ "name": "pgvector (Postgres + vectors)", "description": "PostgreSQL with the pgvector extension for embeddings / RAG vector search" }
