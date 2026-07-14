@@ -1,0 +1,1 @@
+{ "name": "Security Auditor", "description": "Audits code, config & IaC for conformance to the project's declared security standards" }
