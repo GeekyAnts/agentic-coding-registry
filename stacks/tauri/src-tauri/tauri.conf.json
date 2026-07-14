@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "app",
+  "version": "0.1.0",
+  "identifier": "com.example.app",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173"
+  },
+  "app": {
+    "windows": [
+      { "label": "main", "title": "app", "width": 900, "height": 700 }
+    ],
+    "security": { "csp": null }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": ["icons/icon.png"]
+  }
+}
