@@ -1,0 +1,18 @@
+// Prisma schema. Docs: https://www.prisma.io/docs
+// Prisma 7: the connection URL lives in prisma.config.ts (not here).
+// After editing, run `pnpm db:generate`, then `pnpm db:migrate` to apply.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Example {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+}
