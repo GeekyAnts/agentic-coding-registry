@@ -1,0 +1,4 @@
+  svelte:
+    build: .
+    ports:
+      - "8082:80"
