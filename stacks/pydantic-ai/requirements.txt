@@ -1,0 +1,3 @@
+# Lean install: core + Anthropic only. For another provider, add its extra
+# (e.g. pydantic-ai-slim[anthropic,openai]) or use the full `pydantic-ai`.
+pydantic-ai-slim[anthropic]>=2.9,<3

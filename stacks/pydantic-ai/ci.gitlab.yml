@@ -1,0 +1,6 @@
+pydantic-ai:
+  stage: build
+  image: python:3.12
+  script:
+    - pip install -r requirements.txt
+    - python -m compileall .
