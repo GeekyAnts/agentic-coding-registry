@@ -1,0 +1,8 @@
+nuxt:
+  stage: build
+  image: node:22
+  before_script:
+    - corepack enable
+    - pnpm install
+  script:
+    - pnpm run build
