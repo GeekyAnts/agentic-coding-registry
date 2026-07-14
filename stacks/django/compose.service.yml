@@ -1,0 +1,4 @@
+  django:
+    build: .
+    ports:
+      - "8002:8000"
