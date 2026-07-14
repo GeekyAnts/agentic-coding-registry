@@ -1,0 +1,4 @@
+{
+  "name": "LangGraph agent (Node)",
+  "description": "LangChain 1.0 createAgent on the LangGraph runtime, with Claude (Node/TypeScript)"
+}
