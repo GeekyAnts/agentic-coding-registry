@@ -1,0 +1,6 @@
+  chroma:
+    image: chromadb/chroma:1.1.0
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./.data/chroma:/data
