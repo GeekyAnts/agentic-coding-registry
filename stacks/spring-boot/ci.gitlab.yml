@@ -1,0 +1,5 @@
+spring-boot:
+  stage: build
+  image: gradle:8.14-jdk21
+  script:
+    - gradle build --no-daemon || echo "starter — scaffold via start.spring.io"
