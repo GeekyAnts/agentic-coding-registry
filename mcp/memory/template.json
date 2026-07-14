@@ -1,0 +1,1 @@
+{ "name": "Memory", "description": "Persistent knowledge-graph memory the agent can write to and query (stdio, no key)" }

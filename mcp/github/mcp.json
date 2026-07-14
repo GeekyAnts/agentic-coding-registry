@@ -1,0 +1,5 @@
+{
+  "transport": "http",
+  "url": "https://api.githubcopilot.com/mcp/",
+  "note": "Official GitHub remote MCP server. Authenticates via OAuth on first use (in Claude Code, run /mcp to sign in)."
+}

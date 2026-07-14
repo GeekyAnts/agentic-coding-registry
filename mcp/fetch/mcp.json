@@ -1,0 +1,6 @@
+{
+  "transport": "stdio",
+  "command": "uvx",
+  "args": ["mcp-server-fetch"],
+  "note": "Requires uv/Python on the machine (https://docs.astral.sh/uv/)."
+}

@@ -1,0 +1,1 @@
+{ "name": "Filesystem", "description": "Structured file access (read, search, list) scoped to the project dir (stdio, no key)" }

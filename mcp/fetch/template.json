@@ -1,0 +1,1 @@
+{ "name": "Fetch", "description": "Fetch a URL and convert it to clean Markdown for the agent to read (stdio, needs uv/Python)" }
