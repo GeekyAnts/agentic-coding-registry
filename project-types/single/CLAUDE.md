@@ -1,8 +1,11 @@
 # <Project> Knowledge Base
 
-> Structured following **OKF (Open Knowledge Foundation)** principles: explicit
+> Structured following the **OKF (Open Knowledge Format)** v0.1 spec: explicit
 > metadata & provenance, a named maintainer, and knowledge organized into
 > clearly categorized, referenceable sections.
+>
+> A companion **`knowledge/` OKF bundle** mirrors this file as individual concept
+> files (one per stack/database/etc.); keep the two in sync when facts change.
 >
 > Project shape: **Single Project** — one application/package in this repo.
 >
