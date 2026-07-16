@@ -2,7 +2,7 @@
 # Docs: https://opentofu.org/docs/
 
 terraform {
-  required_version = ">= 1.6"
+  required_version = ">= 1.12"
   # Configure a remote backend for shared state (never commit state files):
   # backend "s3" {
   #   bucket = "my-tofu-state"

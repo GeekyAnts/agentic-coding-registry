@@ -4,7 +4,7 @@ Starter guidance. Generate the full project (incl. Gradle wrapper) via
 [start.spring.io](https://start.spring.io) or:
 
 ```
-spring init --dependencies=web --build=gradle --java-version=21 .
+spring init --dependencies=web --build=gradle --java-version=25 .
 gradle bootRun
 ```
 
