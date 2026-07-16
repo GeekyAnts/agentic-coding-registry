@@ -1,6 +1,6 @@
 ## Stack: Spring Boot (Java)
 
-- **Language:** Java 21. **Framework:** Spring Boot 3.5. **Build:** Gradle.
+- **Language:** Java 25. **Framework:** Spring Boot 4.1. **Build:** Gradle.
   Minimal starter — generate the full project via [start.spring.io](https://start.spring.io).
 - **Structure:** entry `Application.java` (`@SpringBootApplication`); REST
   controllers (`@RestController`) under `com.example.app`; config in

@@ -1,5 +1,5 @@
 laravel:
   stage: build
-  image: php:8.3-cli
+  image: php:8.5-cli
   script:
     - php -l public/index.php

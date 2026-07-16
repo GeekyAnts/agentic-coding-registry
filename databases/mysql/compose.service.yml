@@ -1,5 +1,5 @@
   mysql:
-    image: mysql:8
+    image: mysql:9.7
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: app

@@ -1,5 +1,5 @@
   mongodb:
-    image: mongo:7
+    image: mongo:8.0
     environment:
       MONGO_INITDB_ROOT_USERNAME: app
       MONGO_INITDB_ROOT_PASSWORD: app
