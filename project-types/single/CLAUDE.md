@@ -27,6 +27,22 @@
 
 ---
 
+## Knowledge Base (OKF)
+
+Durable knowledge about this project lives in the [`knowledge/`](./knowledge/) folder as an **Open Knowledge Format (OKF)** bundle — vendor-neutral markdown + YAML. Start at [`knowledge/index.md`](./knowledge/index.md).
+
+**Read `knowledge/` before searching anything.** When you need to understand how something works, consult the bundle first — before grepping or exploring the codebase — as the fastest source of durable context on architecture, conventions, and decisions.
+
+**Follow OKF going forward.** When project knowledge changes (new pipeline stage, a chosen dependency, a decided convention), record it in `knowledge/` rather than letting it live only in code or chat:
+
+- Each concept is one `.md` file with YAML frontmatter. The **only required field is a non-empty `type`** (free-form, e.g. `Pipeline Stage`, `Convention`, `Data Source`). Recommended: `title`, `description`, `resource` (a URI for the underlying asset), `tags`, `timestamp` (ISO 8601).
+- Body sections are conventional, not mandatory: use `# Schema` for data assets, `# Examples` for usage, `# Citations` for sources. Express relationships between concepts with markdown links in prose.
+- Reserved files: `index.md` (navigation; the bundle root declares `okf_version: "0.1"`) and `log.md` (reverse-chronological change history). Append a dated entry to [`knowledge/log.md`](./knowledge/log.md) whenever you change the bundle.
+- **Guardrails:** never invent data (ask if a `type`, URL, or field is unknown); preserve unknown frontmatter keys; don't impose a taxonomy; broken links are acceptable (they mark not-yet-written knowledge); stay minimal by default.
+- Validate with `okflint` if it's installed (`okflint validate ./knowledge/`). Keep the bundle **local** — do not push it to any external service (e.g. Knowledge Catalog / `kcmd push`) without explicit maintainer approval.
+
+---
+
 ## 1. Metadata
 
 | Field        | Value                     |
